@@ -5,6 +5,9 @@ resource "azurerm_resource_group" "vmss" {
   tags {
     environment = "codelab"
   }
+  tags = {
+    git_org = "mozesster"
+  }
 }
 
 resource "azurerm_virtual_network" "vmss" {
@@ -15,6 +18,9 @@ resource "azurerm_virtual_network" "vmss" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    git_org = "mozesster"
   }
 }
 
@@ -35,6 +41,9 @@ resource "azurerm_public_ip" "vmss" {
   tags {
     environment = "codelab"
   }
+  tags = {
+    git_org = "mozesster"
+  }
 }
 
 
@@ -50,6 +59,9 @@ resource "azurerm_lb" "vmss" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    git_org = "mozesster"
   }
 }
 
@@ -100,7 +112,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
   }
 
   storage_profile_image_reference {
-    id="${data.azurerm_image.image.id}"
+    id = "${data.azurerm_image.image.id}"
   }
 
   storage_profile_os_disk {
@@ -111,10 +123,10 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
   }
 
   storage_profile_data_disk {
-    lun          = 0
-    caching        = "ReadWrite"
-    create_option  = "Empty"
-    disk_size_gb   = 10
+    lun           = 0
+    caching       = "ReadWrite"
+    create_option = "Empty"
+    disk_size_gb  = 10
   }
 
   os_profile {
@@ -146,6 +158,9 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
   tags {
     environment = "codelab"
   }
+  tags = {
+    git_org = "mozesster"
+  }
 }
 
 
@@ -158,6 +173,9 @@ resource "azurerm_public_ip" "jumpbox" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    git_org = "mozesster"
   }
 }
 
@@ -175,6 +193,9 @@ resource "azurerm_network_interface" "jumpbox" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    git_org = "mozesster"
   }
 }
 
@@ -216,5 +237,8 @@ resource "azurerm_virtual_machine" "jumpbox" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    git_org = "mozesster"
   }
 }
